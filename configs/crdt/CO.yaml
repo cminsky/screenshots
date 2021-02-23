@@ -1,6 +1,5 @@
 state: CO
 
-links: 
+links:
 - name: primary
-  url: https://covid19.colorado.gov/data/case-data
-
+  url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Home?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fpublic.tableau.com%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:animate_transition=yes&:display_static_image=no&:display_spinner=no&:display_overlay=yes&:display_count=yes&:language=en&publish=yes&:loadOrderID=0
