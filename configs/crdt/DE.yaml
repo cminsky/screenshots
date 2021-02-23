@@ -1,6 +1,12 @@
 state: DE
 
-links: 
+links:
 - name: primary
   url: https://myhealthycommunity.dhss.delaware.gov/locations/state
-
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("[data-chart-id='count-charts']");
+    await page.click("[data-chart-id='count-charts']");
+    await page.waitForDelay(5000);
+    page.done();
+  message: click for DE Total Tests
