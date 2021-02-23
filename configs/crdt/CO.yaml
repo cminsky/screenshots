@@ -2,4 +2,15 @@ state: CO
 
 links:
 - name: primary
-  url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Home?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fpublic.tableau.com%2F&:embed_code_version=3&:tabs=no&:toolbar=yes&:animate_transition=yes&:display_static_image=no&:display_spinner=no&:display_overlay=yes&:display_count=yes&:language=en&publish=yes&:loadOrderID=0
+  url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Case_Demographics?%3Aembed=y&%3AshowVizHome=no
+  renderSettings:
+    viewport:
+      width: 1400
+      height: 2000
+  overseerScript: |
+    page.manualWait();
+    await page.waitForSelector("#tabZoneId172");
+    await page.click("#tabZoneId172");
+    await page.waitForDelay(1000);
+    page.done();
+  message: using viewport width 1400 for CO
