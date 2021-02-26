@@ -1,7 +1,20 @@
 state: AK
 
-links: 
+links:
 - name: primary
   url: https://opendata.arcgis.com/datasets/ebf62bbdba59497a9dba00aed0c17078_0.csv
   file: csv
 
+- name: secondary
+  url: https://alaska-coronavirus-vaccine-outreach-alaska-dhss.hub.arcgis.com/app/6a5932d709ef4ab1b868188a4c757b4f
+  overseerScript: |
+    await page.waitForNavigation({
+     waitUntil:"domcontentloaded"});
+    await page.evaluate(() => {
+      document.evaluate("//a[contains(text(),'All')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("ctpclickhere");
+    page.manualWait();
+    await page.waitForDelay(90000);
+    page.done()
+  message: click all residence status
