@@ -11,3 +11,37 @@ links:
 
 - name: secondary
   url: https://covid19.ca.gov/
+
+- name: tertiary-test1
+  url: https://covid19.ca.gov/equity/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    await page.waitForSelector("button[data-key='tests']");
+    page.click("button[data-key='tests']");
+    await page.waitForDelay(30000);
+    page.done();
+  message: click on 'Testing' under 'COVID-19 impact by race and ethnicity'
+
+- name: tertiary-test2
+  url: https://covid19.ca.gov/equity/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    page.mouse.click(715,3400);
+    await page.waitForDelay(30000);
+    page.done();
+  message: click on 'Testing' under 'COVID-19 impact by race and ethnicity'
+
+- name: tertiary-test3
+  url: https://covid19.ca.gov/equity/
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(30000);
+    await page.evaluate(() => {
+      document.evaluate("//button[contains(text(),'Testing')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.setAttribute("ctpclickhere", "ctpclickhere");
+    });
+    page.click("ctpclickhere");
+    await page.waitForDelay(60000);
+    page.done();
+  message: click on 'Testing' under 'COVID-19 impact by race and ethnicity'
