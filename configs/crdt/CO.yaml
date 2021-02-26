@@ -1,7 +1,7 @@
 state: CO
 
 links:
-- name: primary
+- name: primary-test1
   url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Case_Demographics?%3Aembed=y&%3AshowVizHome=no
   renderSettings:
     viewport:
@@ -9,8 +9,54 @@ links:
       height: 2000
   overseerScript: |
     page.manualWait();
+    await page.waitForDelay(1000);
     await page.waitForSelector("#tabZoneId172");
     await page.click("#tabZoneId172");
     await page.waitForDelay(1000);
+    page.done();
+  message: using viewport width 1400 for CO
+
+- name: primary-test2
+  url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Case_Demographics?%3Aembed=y&%3AshowVizHome=no
+  renderSettings:
+    viewport:
+      width: 1400
+      height: 2000
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(1000);
+    await page.waitForSelector("[tb-test-id='Button Demo Race']");
+    await page.click("[tb-test-id='Button Demo Race']");
+    await page.waitForDelay(1000);
+    page.done();
+  message: using viewport width 1400 for CO
+
+- name: primary-test3
+  url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Case_Demographics?%3Aembed=y&%3AshowVizHome=no
+  renderSettings:
+    viewport:
+      width: 1400
+      height: 2000
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(1000);
+    await page.waitForSelector("#view12902688137728866763_1197908040940787403");
+    await page.click("#view12902688137728866763_1197908040940787403");
+    await page.waitForDelay(1000);
+    page.done();
+  message: using viewport width 1400 for CO
+
+- name: primary-test4
+  url: https://public.tableau.com/views/Colorado_COVID19_Data/CO_Case_Demographics?%3Aembed=y&%3AshowVizHome=no
+  renderSettings:
+    viewport:
+      width: 1400
+      height: 2000
+  overseerScript: |
+    page.manualWait();
+    await page.waitForDelay(1000);
+    await page.waitForSelector("[aria-describedby=' instructions12902688137728866763_1197908040940787403']");
+    await page.click("[aria-describedby=' instructions12902688137728866763_1197908040940787403']");
+    await page.waitForDelay(30000);
     page.done();
   message: using viewport width 1400 for CO
