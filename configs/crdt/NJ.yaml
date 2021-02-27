@@ -1,12 +1,6 @@
 state: NJ
 
-links:
 - name: primary
-  url: https://www.state.nj.us/health/cd/documents/topics/NCOV/COVID_Confirmed_Case_Summary.pdf
-  file: pdf
-  message: downloading pdf for NJ
-
-- name: secondary
   url: https://covid19.nj.gov/#live-updates
   overseerScript: |
     page.manualWait();
@@ -17,28 +11,28 @@ links:
     page.done();
   message: close the overlay
 
-- name: tertiary
+- name: secondary
   url: https://dashboards.doh.nj.gov/views/DailyConfirmedCaseSummary7_22_2020/ConfirmedCases?%3Aembed=y&%3AshowVizHome=no
   renderSettings:
     viewport:
       width: 2000
   message: cases, using viewport width 2000
 
-- name: quaternary
+- name: tertiary
   url: https://dashboards.doh.nj.gov/views/ProbableDeaths_07_21/ConfirmedProbableDashboard?%3Aembed=y&%3AshowVizHome=no
   renderSettings:
     viewport:
       width: 2000
   message: deaths, using viewport width 2000
 
-- name: quinary
+- name: quaternary
   url: https://dashboards.doh.nj.gov/views/DailyConfirmedCaseSummary7_22_2020/EverHospitalized?%3Aembed=y&%3AshowVizHome=no
   renderSettings:
     viewport:
       width: 2000
   message: hospitalizations, using viewport width 2000
 
-- name: deaths-secondary
+- name: quinary
   url: https://dashboards.doh.nj.gov/views/DailyConfirmedCaseSummary7_22_2020/Deaths?%3Aembed=y&%3AshowVizHome=no
   renderSettings:
     viewport:
